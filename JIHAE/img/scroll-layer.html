@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>무제 문서</title>
+
+<!-- *************따라다니는 레이어 코드 시작************* -->
+
+<!-- 떠다니는 레이어 시작 -->
+<div id="ScrollMenu" style="position:absolute; left:614px; top:41px; width:108px; z-index:1; height: 137px;">
+<table width="100" height="129" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+  <tr>
+    <td align="center" valign="middle" bgcolor="#FFFFFF">스크롤바를<br> 
+    따라다니는<br> 
+    레이어</td>
+  </tr>
+</table>
+</div>
+<!-- 떠다니는 레이어 종료 -->
+
+<!-- 따라다니는 레이어 스크립트 종료 -->
+<script language=javascript>
+<!--
+
+var yScrollThumb;
+var yMenuTop;
+
+function CheckMenuPosition()
+{
+    // 아래의 400은 웹페이지 구성이 화면 가운데 이고 폭이 400px일 때,
+	// 페이지 내용 오른쪽에 레이어를 위치
+	yScrollThumb = 400 + (document.body.clientWidth-400) /2;
+	if (yScrollThumb != ScrollMenu.style.left)
+	{
+	   ScrollMenu.style.left = yScrollThumb;
+    }
+	// 레이어는 스크롤바를 내릴 때 항상 위에서 100px 밑에 위치
+	yScrollThumb = document.body.scrollTop +100;
+	// 현재 메뉴의 위치를 10진수로 구한다.
+    yMenuTop = parseInt ( ScrollMenu.style.top, 10); 
+
+	if ( yMenuTop == yScrollThumb)	
+	{// 레이어를 이동하 필요가 없다면 다음 타이머는 조금 늦추어 발생 
+		TimeOutInterval = 500;
+	}
+	else
+	{// 레이어의 위치를 스크롤바의 썸브 위치로 이동한다.
+	
+	    // 레이어의 위치를 스크롤바의 썸브 위치 사이의 중간 위치를 구한다. 
+		yMenuTop = ( yMenuTop + yScrollThumb) / 2;
+		
+		if ( 200 >= yMenuTop)
+		{// 변경할 위치가 200보다 작다면 200으로 고정한다.
+		 // 즉, 화면 맨 위로 이동했다면 상단의 캡션부분을 넘지 못하게
+		    ScrollMenu.style.top = 200;
+			TimeOutInterval = 500;	
+		}
+		else
+		{// 레이어의 위치를 변경하고 다시 스크롤바의 썸브 위치로
+		 // 레이어를 빠르게 이동 시키기 위해
+		 // 다음 타이머 이벤트를 빨리 발생하게 한다. 
+	    	ScrollMenu.style.top = yMenuTop;
+			TimeOutInterval = 10;	
+		}
+   }
+   setTimeout ("CheckMenuPosition()", TimeOutInterval);
+}
+
+function OnLoad()
+{
+   CheckMenuPosition();
+   return true;
+}
+OnLoad();
+//-->
+</script>
+<!-- 따라다니는 레이어 스크립트 종료 -->
+
+<!-- *************따라다니는 레이어 코드 종료************* -->
+</head>
+
+<body>
+<table width="400" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#000000">
+  <tr>
+    <td align="center" bgcolor="#FFFFFF"><p>1</p>
+      <p>&nbsp;</p>
+      <p>2</p>
+      <p>&nbsp;</p>
+      <p>3</p>
+      <p>&nbsp;</p>
+      <p>4</p>
+      <p>&nbsp;</p>
+      <p>5</p>
+      <p>&nbsp;</p>
+      <p>6</p>
+      <p>&nbsp;</p>
+      <p>7</p>
+      <p>&nbsp;</p>
+      <p>8</p>
+      <p>&nbsp;</p>
+      <p>9</p>
+      <p>&nbsp;</p>
+      <p>10</p>
+      <p>&nbsp;</p>
+      <p>11</p>
+      <p>&nbsp;</p>
+      <p>12</p>
+      <p>&nbsp;</p>
+      <p>13</p>
+      <p>&nbsp;</p>
+      <p>14</p>
+      <p>&nbsp;</p>
+      <p>15</p>
+      <p>&nbsp;</p>
+      <p>16</p>
+      <p>&nbsp;</p>
+      <p>17</p>
+      <p>&nbsp;</p>
+      <p>18</p>
+      <p>&nbsp;</p>
+      <p>19</p>
+      <p>&nbsp;</p>
+      <p>20</p>
+      <p>&nbsp;</p>
+      <p>21</p>
+      <p>&nbsp;</p>
+      <p>22</p>
+      <p>&nbsp;</p>
+      <p>23</p>
+      <p>&nbsp;</p>
+      <p>24</p>
+      <p>&nbsp;</p>
+      <p>25</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
