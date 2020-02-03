@@ -538,3 +538,21 @@ a{
 #content img{
   width: 50px;
 }
+
+/**모바일**/
+@media screen and (max-width : 400px){
+  .view_url {
+    margin-left: 2% !important;
+  }
+  #Home h1 {
+    font-size: 80px;
+}
+#Home img {
+  position: absolute;
+  left: 35%;
+  top: 27%;
+}
+.work_1{
+  height: 910px !important;
+}
+}
